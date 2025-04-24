@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Ты любишь меня?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6e6;
+    }
+    h1 {
+      font-size: 36px;
+      color: #d6336c;
+    }
+    .button {
+      font-size: 24px;
+      padding: 10px 20px;
+      margin: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+    .yes {
+      background-color: #28a745;
+      color: white;
+    }
+    .no {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ты любишь меня?</h1>
+  <button class="button yes" onclick="alert('Я тоже тебя люблю! ❤️')">Да</button>
+  <button class="button no" id="noButton">Нет</button>
+
+  <script>
+    const noButton = document.getElementById('noButton');
+
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    }
+
+    noButton.addEventListener('mouseover', moveButton);
+    noButton.addEventListener('click', moveButton); // на всякий случай
+  </script>
+
+</body>
+</html>
